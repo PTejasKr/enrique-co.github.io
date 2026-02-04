@@ -1,0 +1,93 @@
+@import '../../../styles/variables';
+
+.hero {
+    height: 80vh; // More cinematic
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-off-white;
+    margin-bottom: 120px;
+    background-color: $color-obsidian;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(10, 10, 10, 0.2) 0%, rgba(10, 10, 10, 0.8) 100%);
+        z-index: 1;
+    }
+}
+
+.bgImage {
+    opacity: 0.6;
+    object-position: center;
+    transition: transform 10s ease; // Subtle zoom effect could be added via JS/CSS animation
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 40px;
+
+    h1 {
+        font-family: $font-family-serif;
+        font-size: 56px;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 96px;
+        }
+    }
+
+    p {
+        font-family: $font-family-sans;
+        font-size: 16px;
+        letter-spacing: 0.1em;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+        color: $color-rose-steel;
+        text-transform: uppercase;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px 40px;
+    padding-bottom: 150px;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.emptyState {
+    text-align: center;
+    padding: 100px 20px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-family: $font-family-sans;
+        font-size: 14px;
+        color: $color-grey-medium;
+    }
+}

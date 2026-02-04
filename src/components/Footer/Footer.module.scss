@@ -1,0 +1,140 @@
+@import '../../styles/variables';
+
+.footer {
+    background-color: lighten($color-obsidian, 3%); // Subtle lift from pure black
+    color: $color-off-white;
+    padding: 100px 0 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+
+    @media (min-width: $breakpoint-desktop) {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+.newsletter {
+    h3 {
+        font-family: $font-family-serif;
+        font-size: 20px;
+        margin-bottom: 24px;
+        color: $color-off-white;
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 30px;
+        color: $color-steel-light;
+        line-height: 1.6;
+        max-width: 320px;
+    }
+}
+
+.form {
+    display: flex;
+    border-bottom: 1px solid $color-steel-light;
+    padding-bottom: 12px;
+    max-width: 320px;
+    transition: border-color 0.3s ease;
+
+    &:focus-within {
+        border-color: $color-rose-steel;
+    }
+
+    input {
+        background: transparent;
+        border: none;
+        flex-grow: 1;
+        color: $color-off-white;
+        font-family: $font-family-sans;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+
+        &::placeholder {
+            color: darken($color-steel-light, 20%);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        background: transparent;
+        border: none;
+        color: $color-off-white;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-rose-steel;
+        }
+    }
+}
+
+.column {
+    h4 {
+        font-size: 12px;
+        margin-bottom: 24px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $color-steel-light;
+        font-weight: 600;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 16px;
+    }
+
+    a {
+        font-size: 13px;
+        color: darken($color-off-white, 20%);
+        transition: color 0.3s ease;
+        letter-spacing: 0.02em;
+
+        &:hover {
+            color: $color-rose-steel;
+        }
+    }
+}
+
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 11px;
+    color: darken($color-steel-light, 10%);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    @media (min-width: $breakpoint-desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .legalLinks {
+        display: flex;
+        gap: 30px;
+
+        a:hover {
+            color: $color-off-white;
+        }
+    }
+}

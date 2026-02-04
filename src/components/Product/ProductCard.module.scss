@@ -1,0 +1,72 @@
+@import '../../styles/variables';
+
+.card {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.3s;
+
+    &:hover {
+        .imageWrapper img {
+            transform: scale(1.05); // increased slightly
+        }
+    }
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background-color: $color-steel-dark; // Dark background for the watch
+    border-radius: 2px; // Subtle corner
+
+    img {
+        object-fit: contain;
+        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        padding: 30px; // More breathing room
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5)); // Add depth since we removed multiply logic
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.reference {
+    font-family: $font-family-sans;
+    font-size: 10px;
+    color: $color-steel-light;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.name {
+    font-family: $font-family-serif;
+    font-size: 16px;
+    color: $color-off-white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.material {
+    font-family: $font-family-sans;
+    font-size: 12px;
+    color: darken($color-steel-light, 10%);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.price {
+    margin-top: 12px;
+    font-family: $font-family-sans;
+    font-size: 12px;
+    color: $color-rose-steel;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}

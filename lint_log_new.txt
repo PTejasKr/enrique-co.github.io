@@ -1,0 +1,15 @@
+
+> audemars-piguet-clone@0.1.0 lint
+> eslint
+
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\app\brand-values\page.tsx
+  16:20  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  16:68  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\app\press-lounge\page.tsx
+  57:41  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  57:53  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+Γ£û 4 problems (4 errors, 0 warnings)
+

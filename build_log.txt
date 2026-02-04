@@ -1,0 +1,506 @@
+
+> audemars-piguet-clone@0.1.0 build
+> next build
+
+ΓÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\punya\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\package-lock.json
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+Turbopack build encountered 14 warnings:
+./Desktop/oe watch/audemars-piguet-clone/src/app/brand-values/BrandValues.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/app/brand-values/BrandValues.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\app\brand-values\BrandValues.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/brand-values/BrandValues.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/brand-values/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/careers/Careers.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/app/careers/Careers.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\app\careers\Careers.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/careers/Careers.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/careers/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/detail.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/app/collections/%5Bslug%5D/detail.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../../styles/variables';
+
+
+src\app\collections\[slug]\detail.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/detail.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/collections/collections.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/app/collections/collections.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\app\collections\collections.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/collections.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/foundation/Foundation.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/app/foundation/Foundation.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\app\foundation\Foundation.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/foundation/Foundation.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/foundation/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/our-world/our-world.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/app/our-world/our-world.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\app\our-world\our-world.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/our-world/our-world.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/our-world/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/press-lounge/PressLounge.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/app/press-lounge/PressLounge.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\app\press-lounge\PressLounge.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/press-lounge/PressLounge.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/press-lounge/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/stores/stores.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/app/stores/stores.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\app\stores\stores.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/stores/stores.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/stores/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Collection/CollectionCard.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/components/Collection/CollectionCard.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\components\Collection\CollectionCard.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Collection/CollectionCard.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Collection/CollectionCard.tsx
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/components/Configurator/Configurator.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\components\Configurator\Configurator.module.scss 1:9  root stylesheet
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.module.scss [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/configurator/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.module.scss [Client Component SSR]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Client Component SSR]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/configurator/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\components\Product\ProductCard.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.tsx
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 59, column 11 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss:59:11:
+Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.adjust instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+59 |     color: darken($color-steel-light, 10%);
+
+
+src\components\Product\ProductCard.module.scss 60:12  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.tsx
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 59, column 11 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss:59:11:
+darken() is deprecated. Suggestions:
+
+color.scale($color, $lightness: -18.75%)
+color.adjust($color, $lightness: -10%)
+
+More info: https://sass-lang.com/d/color-functions
+
+59 |     color: darken($color-steel-light, 10%);
+
+
+src\components\Product\ProductCard.module.scss 60:12  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.tsx
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/page.tsx
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Store/StoreCard.module.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///C:/Users/punya/Desktop/oe%20watch/audemars-piguet-clone/src/components/Store/StoreCard.module.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import '../../styles/variables';
+
+
+src\components\Store\StoreCard.module.scss 1:9  root stylesheet
+
+
+Import trace:
+  Server Component:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Store/StoreCard.module.scss
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Store/StoreCard.tsx
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/stores/page.tsx
+
+
+
+> Build error occurred
+Error: Turbopack build failed with 14 errors:
+./Desktop/oe watch/audemars-piguet-clone/src/components/ui/Button.module.scss
+Error evaluating Node.js code
+Error: Undefined variable.
+  Γò╖
+8 Γöé     font-family: $font-family-sans;
+  Γöé                  ^^^^^^^^^^^^^^^^^
+  Γò╡
+  src\components\ui\Button.module.scss 8:18  root stylesheet
+Caused by: Error: Undefined variable.
+  Γò╖
+8 Γöé     font-family: $font-family-sans;
+  Γöé                  ^^^^^^^^^^^^^^^^^
+  Γò╡
+  src\components\ui\Button.module.scss 8:18  root stylesheet
+    [at Object.wrapException (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:2337:47)]
+    [at C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:91181:23]
+    [at _wrapJsFunctionForAsync_closure.$protected (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:5005:15)]
+    [at _wrapJsFunctionForAsync_closure.call$2 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:38601:12)]
+    [at Object._asyncStartSync (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:4969:20)]
+    [at _EvaluateVisitor2.visitVariableExpression$body$_EvaluateVisitor0 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:91187:16)]
+    [at _EvaluateVisitor2.visitVariableExpression$1 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:91161:19)]
+    [at VariableExpression0.accept$1$1 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:129253:22)]
+    [at VariableExpression0.accept$1 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:129256:19)]
+    [at C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:89196:41]
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/ui/Button.module.scss [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/ui/Button.tsx [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/configurator/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/ui/Button.module.scss [Client Component SSR]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/ui/Button.tsx [Client Component SSR]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Client Component SSR]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/configurator/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/styles/globals.scss
+Error evaluating Node.js code
+Error: Undefined variable.
+   Γò╖
+13 Γöé     background-color: $color-obsidian;
+   Γöé                       ^^^^^^^^^^^^^^^
+   Γò╡
+  src\styles\globals.scss 13:23  root stylesheet
+Caused by: Error: Undefined variable.
+   Γò╖
+13 Γöé     background-color: $color-obsidian;
+   Γöé                       ^^^^^^^^^^^^^^^
+   Γò╡
+  src\styles\globals.scss 13:23  root stylesheet
+    [at Object.wrapException (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:2337:47)]
+    [at C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:91181:23]
+    [at _wrapJsFunctionForAsync_closure.$protected (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:5005:15)]
+    [at _wrapJsFunctionForAsync_closure.call$2 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:38601:12)]
+    [at Object._asyncStartSync (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:4969:20)]
+    [at _EvaluateVisitor2.visitVariableExpression$body$_EvaluateVisitor0 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:91187:16)]
+    [at _EvaluateVisitor2.visitVariableExpression$1 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:91161:19)]
+    [at VariableExpression0.accept$1$1 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:129253:22)]
+    [at VariableExpression0.accept$1 (C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:129256:19)]
+    [at C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\node_modules\sass\sass.dart.js:89196:41]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/brand-values/BrandValues.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/brand-values/BrandValues.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/brand-values/BrandValues.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/brand-values/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/careers/Careers.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/careers/Careers.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/careers/Careers.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/careers/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/detail.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/detail.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/detail.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/collections/collections.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/collections.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/collections.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/foundation/Foundation.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/foundation/Foundation.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/foundation/Foundation.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/foundation/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/our-world/our-world.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/our-world/our-world.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/our-world/our-world.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/our-world/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/press-lounge/PressLounge.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/press-lounge/PressLounge.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/press-lounge/PressLounge.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/press-lounge/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/app/stores/stores.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/stores/stores.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/stores/stores.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/stores/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Collection/CollectionCard.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Collection/CollectionCard.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Collection/CollectionCard.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Collection/CollectionCard.tsx [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.module.scss [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Configurator/Configurator.tsx [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/configurator/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Product/ProductCard.tsx [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/collections/[slug]/page.tsx [Server Component]
+
+
+./Desktop/oe watch/audemars-piguet-clone/src/components/Store/StoreCard.module.scss.module.css
+Transforming CSS failed
+Selector "[data-theme="light"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  Client Component Browser:
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Store/StoreCard.module.scss.module.css [Client Component Browser]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Store/StoreCard.module.scss [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/components/Store/StoreCard.tsx [Server Component]
+    ./Desktop/oe watch/audemars-piguet-clone/src/app/stores/page.tsx [Server Component]
+
+
+    at ignore-listed frames

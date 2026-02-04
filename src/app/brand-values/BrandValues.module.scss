@@ -1,0 +1,116 @@
+@import '../../styles/variables';
+
+.container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 100px;
+
+    h1 {
+        font-family: $font-family-serif;
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: $color-text-primary;
+
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 72px;
+        }
+    }
+
+    p {
+        font-family: $font-family-serif;
+        font-size: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        color: $color-text-secondary;
+        font-style: italic;
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 120px;
+    align-items: center;
+
+    @media (min-width: $breakpoint-tablet) {
+        flex-direction: row;
+        gap: 80px;
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .imageWrapper {
+        flex: 1;
+        width: 100%;
+        position: relative;
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        flex: 1;
+
+        h2 {
+            font-family: $font-family-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: $color-text-primary;
+        }
+
+        p {
+            font-family: $font-family-sans;
+            line-height: 1.8;
+            color: $color-text-secondary;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.valuesgrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 60px;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .valueCard {
+        text-align: center;
+        padding: 40px 20px;
+        background: $color-grey-light;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+
+        h3 {
+            font-family: $font-family-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: $color-gold;
+        }
+
+        p {
+            font-family: $font-family-sans;
+            font-size: 14px;
+            line-height: 1.6;
+            color: $color-grey-dark;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+
+> audemars-piguet-clone@0.1.0 lint
+> eslint
+
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Configurator\Configurator.tsx
+  19:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Footer\Footer.tsx
+  4:8  warning  'Button' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Story\StoryCard.tsx
+  5:8  warning  'Button' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 3 problems (1 error, 2 warnings)
+

@@ -1,0 +1,119 @@
+@import '../../styles/variables';
+
+.container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 80px;
+
+    h1 {
+        font-family: $font-family-serif;
+        font-size: 56px;
+        margin-bottom: 24px;
+        color: $color-black;
+    }
+
+    p {
+        font-family: $font-family-sans;
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto;
+        color: $color-grey-medium;
+        line-height: 1.6;
+    }
+}
+
+.missionSection {
+    background-color: $color-grey-light;
+    padding: 80px 40px;
+    text-align: center;
+    margin-bottom: 100px;
+    border-radius: 4px;
+
+    h2 {
+        font-family: $font-family-serif;
+        font-size: 36px;
+        color: $color-black;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: $font-family-sans;
+        font-size: 16px;
+        max-width: 800px;
+        margin: 0 auto;
+        color: $color-grey-medium;
+    }
+}
+
+.initiative {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 0;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        &:nth-child(even) {
+            .content {
+                order: -1;
+            }
+        }
+    }
+
+    .imageWrapper {
+        position: relative;
+        height: 500px;
+        width: 100%;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        padding: 60px 40px;
+        background-color: $color-white;
+
+        h3 {
+            font-family: $font-family-serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: $color-gold;
+        }
+
+        p {
+            font-family: $font-family-sans;
+            font-size: 15px;
+            line-height: 1.8;
+            color: $color-grey-dark;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-bottom: 10px;
+                padding-left: 20px;
+                position: relative;
+                font-family: $font-family-sans;
+                font-size: 14px;
+                color: $color-grey-dark;
+
+                &::before {
+                    content: '•';
+                    color: $color-gold;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

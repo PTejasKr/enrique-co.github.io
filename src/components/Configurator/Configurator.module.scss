@@ -1,0 +1,169 @@
+@import '../../styles/variables';
+
+.configurator {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 80px; // Clear fixed header
+
+    @media (min-width: $breakpoint-desktop) {
+        flex-direction: row;
+        padding-top: 0;
+    }
+}
+
+.visualizer {
+    flex: 1;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+
+    @media (min-width: $breakpoint-desktop) {
+        height: 100vh;
+    }
+}
+
+.watchContainer {
+    position: relative;
+    width: 350px;
+    height: 500px;
+
+    @media (min-width: $breakpoint-tablet) {
+        width: 500px;
+        height: 700px;
+    }
+}
+
+.baseImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+// Overlay layers for color application
+// In a real app, these would be separate transparent PNGs (case.png, dial.png)
+// For this clone, we simulate using CSS mix-blend-mode or pseudo-elements on SVG placeholders
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    z-index: 2;
+    pointer-events: none;
+    transition: background-color 0.3s ease;
+
+    // Masks would be ideal here if we had precise SVGs
+    // For the demo, we'll apply a subtle tint to the whole image to simulate "Concept"
+}
+
+.controls {
+    flex: 0 0 100%;
+    background-color: $color-white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+
+    @media (min-width: $breakpoint-desktop) {
+        flex: 0 0 400px;
+        padding-top: 120px;
+    }
+}
+
+.sectionTitle {
+    font-family: $font-family-serif;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid $color-grey-light;
+    margin-bottom: 30px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: $font-family-sans;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-grey-medium;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+
+    &.active {
+        color: $color-black;
+        border-bottom-color: $color-gold;
+        font-weight: 600;
+    }
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+
+    &:hover .swatch {
+        transform: scale(1.1);
+    }
+
+    &.active .swatch {
+        border: 2px solid $color-gold;
+        box-shadow: 0 0 0 2px $color-white inset;
+    }
+}
+
+.swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.optionName {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: $color-grey-medium;
+    text-align: center;
+}
+
+.summary {
+    margin-top: auto;
+    padding-top: 40px;
+    border-top: 1px solid $color-grey-light;
+
+    h4 {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 12px;
+        color: $color-grey-medium;
+        margin-bottom: 20px;
+    }
+}

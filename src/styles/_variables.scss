@@ -1,0 +1,71 @@
+// Core Palette (Static)
+$color-gold: #c6a664;
+$color-obsidian: #0a0a0a;
+$color-steel-dark: #2a2a2a;
+$color-steel-light: #888888;
+$color-rose-steel: #e0bfb8;
+$color-off-white: #f5f5f5;
+$color-grey-dark: #1a1a1a;
+$color-grey-medium: #4a4a4a;
+$color-grey-light: #e0e0e0;
+$color-white-pure: #ffffff;
+$color-black-pure: #000000;
+
+
+
+// SCSS Accessors (Mapped to CSS Variables)
+$color-bg-primary: var(--color-bg-primary);
+$color-bg-secondary: var(--color-bg-secondary);
+$color-bg-tertiary: var(--color-bg-tertiary);
+
+$color-text-primary: var(--color-text-primary);
+$color-text-secondary: var(--color-text-secondary);
+$color-text-accent: var(--color-text-accent);
+
+$color-border: var(--color-border);
+$color-overlay: var(--color-overlay);
+
+// Legacy/Static Mappings (Use these sparingly, prefer semantic above)
+$color-black: $color-obsidian;
+$color-white: $color-off-white;
+
+// Typography
+$font-family-serif: var(--font-cinzel), serif;
+$font-family-sans: var(--font-inter), sans-serif;
+
+// Spacing
+$spacing-xs: 6px; // Increased from 4px
+$spacing-sm: 12px; // Increased from 8px
+$spacing-md: 24px; // Increased from 16px
+$spacing-lg: 48px; // Increased from 32px
+$spacing-xl: 96px; // Increased from 64px
+$spacing-xxl: 160px; // Increased from 120px
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1440px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+@mixin grid-responsive($min-width: 300px, $gap: 30px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: $gap;
+}

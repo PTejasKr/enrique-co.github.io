@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    font-family: $font-family-sans;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1px solid transparent;
+
+    // Primary: White text on Dark (or Transparent with border)
+    &.primary {
+        background-color: transparent;
+        border-color: $color-off-white;
+        color: $color-off-white;
+
+        &:hover {
+            background-color: $color-off-white;
+            color: $color-obsidian;
+        }
+    }
+
+    // Secondary: Dark text on White (or reverse for this theme)
+    &.secondary {
+        background-color: $color-rose-steel;
+        color: $color-obsidian;
+        border-color: $color-rose-steel;
+
+        &:hover {
+            background-color: transparent;
+            color: $color-rose-steel;
+        }
+    }
+
+    // Outline: Transparent with border
+    &.outline {
+        background-color: transparent;
+        border-color: rgba(255, 255, 255, 0.2);
+        color: $color-off-white;
+
+        &:hover {
+            border-color: $color-rose-steel;
+            color: $color-rose-steel;
+        }
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

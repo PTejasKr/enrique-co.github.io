@@ -1,0 +1,85 @@
+@import './variables';
+
+// CSS Variables Definition
+:root {
+    // Default (Dark Mode - ENRIQUE Identity)
+    --color-bg-primary: #{$color-obsidian};
+    --color-bg-secondary: #{$color-steel-dark};
+    --color-bg-tertiary: #{$color-grey-dark};
+
+    --color-text-primary: #{$color-off-white};
+    --color-text-secondary: #{$color-steel-light};
+    --color-text-accent: #{$color-rose-steel};
+
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-overlay: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme='light'] {
+    // Light Mode Overrides
+    --color-bg-primary: #{$color-off-white};
+    --color-bg-secondary: #{$color-white-pure};
+    --color-bg-tertiary: #{$color-grey-light};
+
+    --color-text-primary: #{$color-obsidian};
+    --color-text-secondary: #{$color-grey-medium};
+    --color-text-accent: #{$color-steel-dark}; // Darker accent for contrast
+
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-overlay: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: $color-obsidian;
+    color: $color-off-white;
+    font-family: $font-family-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Utility Classes
+.container {
+    @include container;
+}
+
+.text-gold {
+    color: $color-gold;
+}
