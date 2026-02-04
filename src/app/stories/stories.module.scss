@@ -1,205 +1,177 @@
 @import '../../styles/variables';
 
 .container {
-    padding-top: $header-height;
+    padding-top: 100px;
+    min-height: 100vh;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
-    min-height: 100vh;
 }
 
 .hero {
-    padding: 120px 0 80px;
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 80px 20px;
 
     h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
         font-family: $font-family-serif;
+        font-size: 56px;
+        margin-bottom: 20px;
     }
 
     p {
+        font-family: $font-family-sans;
+        max-width: 600px;
+        margin: 0 auto;
         font-size: 18px;
         color: var(--color-text-secondary);
-        line-height: 1.6;
     }
 }
 
 .section {
-    padding: 80px 0;
-    border-top: 1px solid var(--color-border);
-}
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 
-.sectionTitle {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 60px;
-    font-family: $font-family-serif;
-    letter-spacing: 0.1em;
-}
+    h2 {
+        text-align: center;
+        margin-bottom: 60px;
+        font-size: 36px;
+        color: var(--color-text-primary);
+        position: relative;
 
-// Reviews
-.reviewsGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-
-    @media (min-width: $breakpoint-tablet) {
-        grid-template-columns: repeat(3, 1fr);
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--color-text-accent);
+            margin: 20px auto 0;
+        }
     }
 }
 
+// Reviews Grid
+.reviewsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
 .reviewCard {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.05); // Glassy effect on teal
+    padding: 40px;
     border: 1px solid var(--color-border);
     transition: transform 0.3s ease;
 
     &:hover {
         transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.1);
     }
 
-    .stars {
-        color: $color-gold;
-        margin-bottom: 15px;
-        font-size: 14px; // Use sans-serif styling implicitly or add if needed
-    }
-
-    p {
-        font-size: 16px;
-        line-height: 1.6;
+    .reviewText {
+        font-family: $font-family-serif;
+        font-size: 20px;
         margin-bottom: 20px;
         font-style: italic;
+        line-height: 1.6;
     }
 
-    .author {
-        font-size: 12px;
+    .reviewer {
+        font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: var(--color-text-accent);
     }
 }
 
-// Media Centre (Newspaper)
+// Media Centre (Newspaper Snippets)
 .mediaGrid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-
-    @media (min-width: $breakpoint-desktop) {
-        grid-template-columns: repeat(2, 1fr); // 2-column newspaper look
-    }
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
 }
 
 .newspaperSnippet {
-    background-color: #f0f0f0; // Paper color
-    color: #1a1a1a; // Ink color
-    padding: 40px;
-    font-family: 'Times New Roman', serif; // Newspaper font
-    position: relative;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: #fdfbf7; // Paper color
+    color: #1a1a1a; // Black text on paper
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: rotate(var(--rotation)); // Random slight rotation logic handled in loop usually, or just static
+    transition: transform 0.3s ease;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: repeating-linear-gradient(0deg,
-                transparent,
-                transparent 29px,
-                rgba(0, 0, 0, 0.05) 30px);
-        pointer-events: none;
+    &:hover {
+        transform: scale(1.02) rotate(0deg);
+        z-index: 10;
+    }
+
+    .paperHeader {
+        border-bottom: 2px solid #1a1a1a;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        font-family: "Georgia", serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        opacity: 0.7;
     }
 
     h3 {
-        font-family: 'Times New Roman', serif;
-        font-weight: 900;
+        font-family: "Playfair Display", serif; // Newspaper font
         font-size: 28px;
-        text-transform: uppercase;
+        line-height: 1.1;
         margin-bottom: 15px;
-        border-bottom: 2px solid #1a1a1a;
-        padding-bottom: 10px;
+        color: #000;
+        font-weight: 700;
+        border: none; // Override Section h2 style if needed
+        text-align: left;
+        letter-spacing: normal;
+        text-transform: none;
     }
 
-    .meta {
-        font-size: 12px;
-        margin-bottom: 20px;
-        font-style: italic;
-        color: #555;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    p {
-        font-size: 16px;
-        line-height: 1.4;
+    .snippetBody {
+        font-family: "Georgia", serif;
+        font-size: 14px;
+        line-height: 1.6;
+        column-count: 2;
+        gap: 15px;
         text-align: justify;
     }
 }
 
-// Customer Persona
-.personaContent {
+// Persona
+.personaSection {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 60px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 60px;
-    max-width: 1000px;
-    margin: 0 auto;
-
-    @media (min-width: $breakpoint-tablet) {
-        flex-direction: row;
-        align-items: center;
-    }
+    flex-wrap: wrap;
 
     .personaImage {
         flex: 1;
-        aspect-ratio: 4/5;
-        background-color: var(--color-bg-secondary);
-        position: relative;
-        overflow: hidden;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(20%);
-        }
+        min-width: 300px;
+        height: 400px;
+        background: #ccc; // Placeholder
+        background-image: url('/images/persona-placeholder.jpg'); // Needs real image
+        background-size: cover;
+        background-position: center;
     }
 
-    .personaText {
+    .personaContent {
         flex: 1;
+        min-width: 300px;
 
         h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--color-text-accent);
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--color-text-primary);
         }
 
         p {
-            font-size: 16px;
-            line-height: 1.8;
             margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 16px;
             color: var(--color-text-secondary);
-        }
-
-        ul {
-            list-style: none;
-
-            li {
-                margin-bottom: 10px;
-                padding-left: 20px;
-                position: relative;
-
-                &::before {
-                    content: '•';
-                    position: absolute;
-                    left: 0;
-                    color: var(--color-text-accent);
-                }
-            }
         }
     }
 }
