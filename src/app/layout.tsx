@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from '@/context/ThemeContext';
 import GlobalLoader from "@/components/ui/GlobalLoader";
+import ShaderBackground from "@/components/ui/ShaderBackground";
 
 export default function RootLayout({
   children,
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className={`${cinzel.variable} ${inter.variable}`}>
         <ThemeProvider>
           <GlobalLoader />
+          <ShaderBackground />
           <Header />
           {children}
           <Footer />

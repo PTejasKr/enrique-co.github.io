@@ -5,12 +5,14 @@ import Link from 'next/link';
 import styles from './Header.module.scss';
 
 
+import LoginModal from '../Auth/LoginModal'; // Adjust path if needed
 import { MapPin, User, Search } from 'lucide-react';
 
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -61,7 +63,7 @@ const Header = () => {
                     <Link href="/stores" className={styles.iconLink}>
                         <MapPin className="w-5 h-5" strokeWidth={1.5} />
                     </Link>
-                    <button className={styles.iconLink}>
+                    <button className={styles.iconLink} onClick={() => setIsLoginOpen(true)}>
                         <User className="w-5 h-5" strokeWidth={1.5} />
                     </button>
                     {/* Theme Toggle Removed */}
@@ -85,6 +87,8 @@ const Header = () => {
                         </Link>
                     ))}
                 </div>
+
+                <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
             </div>
         </header>
     );

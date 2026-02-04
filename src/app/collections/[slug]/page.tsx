@@ -39,14 +39,6 @@ export default async function CollectionDetailPage({ params }: { params: { slug:
     return (
         <main>
             <section className={styles.hero}>
-                <Image
-                    src={collection.image}
-                    alt={collection.title}
-                    fill
-                    className={styles.bgImage}
-                    style={{ objectFit: 'cover' }}
-                    priority
-                />
                 <div className={styles.heroContent}>
                     <h1>{collection.title}</h1>
                     <p>{collection.description}</p>

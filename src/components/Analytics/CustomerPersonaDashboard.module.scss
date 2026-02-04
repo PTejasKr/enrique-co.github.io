@@ -1,0 +1,379 @@
+@import '../../styles/variables';
+
+// Local variables for this clean UI, overriding global dark theme
+$bg-light: #f8fafc;
+$bg-white: #ffffff;
+$text-main: #1e293b;
+$text-muted: #64748b;
+$border-color: #e2e8f0;
+$accent-color: #4f46e5;
+$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+.dashboardContainer {
+    font-family: var(--font-inter), sans-serif;
+    background-color: $bg-light;
+    color: $text-main;
+    min-height: 100vh;
+    padding: 24px;
+    // Reset any global styles that might interfere with this "clean" look
+    text-align: left;
+
+    // Enclosed box style (as requested "add a box")
+    max-width: 1400px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 10; // Ensure it sits above background effects
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: $bg-white;
+    border-bottom: 1px solid $border-color;
+    margin: -24px -24px 24px -24px; // Full width
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    .headerLeft,
+    .headerRight {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+.pageTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: $text-main;
+    margin: 0;
+}
+
+.personaSelector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: $bg-light;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid $border-color;
+    gap: 8px;
+
+    .dropdown {
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-main;
+        appearance: none;
+        padding-right: 20px;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .dropdownIcon {
+        position: absolute;
+        right: 12px;
+        color: $text-muted;
+        pointer-events: none;
+    }
+}
+
+.datePicker,
+.exportBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.datePicker {
+    background: $bg-white;
+    border: 1px solid $border-color;
+    color: $text-muted;
+}
+
+.exportBtn {
+    background: $accent-color;
+    color: white;
+    border: none;
+    transition: background 0.2s;
+
+    &:hover {
+        background: darken($accent-color, 10%);
+    }
+}
+
+// KPI Row
+.kpiRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.kpiCard {
+    background: $bg-white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    box-shadow: $shadow-sm;
+
+    .kpiHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 8px;
+    }
+
+    .kpiTitle {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $text-muted;
+    }
+
+    .kpiIcon {
+        color: $text-muted;
+    }
+
+    .kpiValue {
+        font-size: 24px;
+        font-weight: 700;
+        color: $text-main;
+        margin-bottom: 4px;
+    }
+
+    .kpiChange {
+        font-size: 12px;
+        color: #10b981; // Green
+        font-weight: 500;
+    }
+}
+
+// Main Grid
+.mainGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.leftCol,
+.rightCol {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+// Card Component
+.card {
+    background: $bg-white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    box-shadow: $shadow-sm;
+
+    .cardTitle {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: $text-main;
+    }
+}
+
+.chartsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.chartWrapper {
+    h4 {
+        font-size: 13px;
+        color: $text-muted;
+        margin-bottom: 12px;
+        font-weight: 500;
+    }
+}
+
+.chartTooltip {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid $border-color;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+
+    .tooltipLabel {
+        font-size: 12px;
+        font-weight: 600;
+        color: $text-main;
+        margin: 0;
+    }
+}
+
+// Summary Card
+.summaryCard {
+    .summaryHeader {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    .avatarPlaceholder {
+        width: 48px;
+        height: 48px;
+        background: $accent-color;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .personaName {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+    }
+
+    .personaDesc {
+        font-size: 13px;
+        color: $text-muted;
+        margin: 0;
+    }
+
+    .actionBox {
+        background: lighten($accent-color, 45%);
+        padding: 12px;
+        border-radius: 6px;
+        border-left: 4px solid $accent-color;
+        font-size: 13px;
+        color: darken($accent-color, 20%);
+    }
+}
+
+// Insights
+.insightsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.insightItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .insightIcon {
+        width: 36px;
+        height: 36px;
+        background: $bg-light;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $accent-color;
+    }
+
+    .insightContent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .insightLabel {
+        font-size: 11px;
+        color: $text-muted;
+        text-transform: uppercase;
+    }
+
+    .insightValue {
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
+
+// Motivation Lists
+.listsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.listGroup {
+    h4 {
+        font-size: 13px;
+        color: $text-muted;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+}
+
+.chipContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .chipGreen {
+        background: #dcfce7;
+        color: #15803d;
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-weight: 500;
+    }
+}
+
+.rankedList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        padding: 6px 0;
+        border-bottom: 1px solid #f1f5f9;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .rankNum {
+            background: $bg-light;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 700;
+            color: $text-muted;
+        }
+    }
+}

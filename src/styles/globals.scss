@@ -3,17 +3,17 @@
 // CSS Variables Definition
 // CSS Variables Definition
 :root {
-    // Brand Identity (Teal Mode)
-    --color-bg-primary: #13A495;
-    --color-bg-secondary: #0e7a6e; // Darker teal for secondary
-    --color-bg-tertiary: #0b5e55;
+    // Brand Identity (Obsidian Mode)
+    --color-bg-primary: #0a0a0a;
+    --color-bg-secondary: #0e0e0e;
+    --color-bg-tertiary: #141414;
 
     --color-text-primary: #ffffff;
     --color-text-secondary: rgba(255, 255, 255, 0.8);
-    --color-text-accent: #a5f3fc; // Light cyan accent
+    --color-text-accent: #c6a664; // Gold accent
 
-    --color-border: rgba(255, 255, 255, 0.2);
-    --color-overlay: rgba(0, 0, 0, 0.4);
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-overlay: rgba(0, 0, 0, 0.7);
 }
 
 // [data-theme='light'] removed as default is now Teal/Light
