@@ -15,7 +15,7 @@ export const boutiques = [
         name: 'EWC House Geneva',
         address: 'Place de la Fusterie 12, 1204 Geneva, Switzerland',
         phone: '+41 22 319 06 80',
-        image: 'https://images.unsplash.com/photo-1565514020176-db79373edbe8?q=80&w=2600&auto=format&fit=crop',
+        image: '/images/stores/geneva.jpg',
         coordinates: { lat: 46.2044, lng: 6.1432 },
         mapUrl: 'https://www.google.com/maps/search/?api=1&query=AP+House+Geneva+Place+de+la+Fusterie+12+1204+Geneva+Switzerland'
     },
@@ -25,7 +25,7 @@ export const boutiques = [
         name: 'EWC House New York',
         address: '53 Gansevoort St, New York, NY 10014, USA',
         phone: '+1 646 760 30 70',
-        image: 'https://images.unsplash.com/photo-1496442226666-8d4a0e62e6e9?q=80&w=2600&auto=format&fit=crop',
+        image: '/images/stores/new-york.jpg',
         coordinates: { lat: 40.7396, lng: -74.0063 },
         mapUrl: 'https://www.google.com/maps/search/?api=1&query=AP+House+New+York+53+Gansevoort+St+New+York+NY+10014+USA'
     },

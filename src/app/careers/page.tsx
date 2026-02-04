@@ -91,6 +91,29 @@ const Careers = () => {
                     ))}
                 </div>
             </section>
+
+            {/* The Enrique School Section */}
+            <section className={styles.school}>
+                <div className={styles.schoolImageWrapper}>
+                    <Image
+                        src="/images/watchmaking-school.png"
+                        alt="Watchmaking School"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                    />
+                </div>
+                <div className={styles.schoolContent}>
+                    <h2>The Enrique School</h2>
+                    <p>To preserve the art of fine watchmaking, we offer full scholarships to aspiring horologists.</p>
+                    <p>Our 3-year intense program covers:</p>
+                    <ul>
+                        <li>Micro-mechanics and restoration.</li>
+                        <li>Traditional finishing techniques (Anglage, Perlage).</li>
+                        <li>Design and movement assembly.</li>
+                    </ul>
+                    <p>Graduates are offered apprenticeships within our atelier or placement in the luxury industry.</p>
+                </div>
+            </section>
         </div>
     );
 };

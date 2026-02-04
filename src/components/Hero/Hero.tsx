@@ -19,7 +19,7 @@ const Hero = () => {
                     playsInline
                     className={styles.videoBackground}
                 >
-                    <source src="/videos/our-world-bg.mp4" type="video/mp4" />
+                    <source src="/videos/hero-new.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
