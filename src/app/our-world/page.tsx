@@ -10,8 +10,13 @@ export default function OurWorldPage() {
     return (
         <div className={styles.container}>
             <section className={styles.hero}>
-                <h1>The Art of Restraint</h1>
-                <p>Luxury is not declared. It is recognized.</p>
+                <video className={styles.videoBackground} autoPlay loop muted playsInline>
+                    <source src="/videos/our-world-bg.mp4" type="video/mp4" />
+                </video>
+                <div className={styles.heroContent}>
+                    <h1>The Art of Restraint</h1>
+                    <p>Luxury is not declared. It is recognized.</p>
+                </div>
             </section>
 
             <section className={styles.content}>

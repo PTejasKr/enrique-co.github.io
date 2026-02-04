@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 import { ThemeProvider } from '@/context/ThemeContext';
+import GlobalLoader from "@/components/ui/GlobalLoader";
 
 export default function RootLayout({
   children,
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${cinzel.variable} ${inter.variable}`}>
         <ThemeProvider>
+          <GlobalLoader />
           <Header />
           {children}
           <Footer />
