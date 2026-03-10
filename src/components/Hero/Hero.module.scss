@@ -20,6 +20,7 @@
     height: 100%;
     z-index: 1;
 
+    // Subtle dark overlay
     &::after {
         content: '';
         position: absolute;
@@ -27,7 +28,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(10, 10, 10, 0.5); // Deeper overlay for obsidian feel
+        background: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), var(--color-bg-primary));
+        z-index: 2;
     }
 
     img,
@@ -36,7 +38,19 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.8; // Slightly mute the video brightness
+        opacity: 0.9;
+        transform: scale(1);
+        animation: cinematicPan 20s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes cinematicPan {
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.08);
     }
 }
 
@@ -69,22 +83,23 @@
 }
 
 .title {
-    font-family: $font-family-serif;
-    font-size: 48px; // Decreased from 64px to prevent wrapping on smaller screens
-    margin-bottom: 40px;
-    line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    max-width: 100%; // Ensure it doesn't overflow
+    font-family: $font-family-sans;
+    font-size: 48px;
+    margin-bottom: $spacing-32;
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -0.02em; // Modern tight tracking
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    color: var(--color-text-primary);
 
     @media (min-width: $breakpoint-tablet) {
-        font-size: 80px; // Decreased from 112px to keep it on two lines comfortably
+        font-size: 72px;
     }
 
     @media (min-width: 1200px) {
-        font-size: 100px; // Restore larger size on very wide screens
+        font-size: 96px; // Massive, dramatic typography
     }
 }
 

@@ -55,7 +55,7 @@ export const boutiques = [
         name: 'Enrique Dubai Mall',
         address: 'The Dubai Mall, Grand Atrium, Dubai, UAE',
         phone: '+971 4 339 8833',
-        image: 'https://images.unsplash.com/photo-1512453979798-5ea904ac6605?q=80&w=2600&auto=format&fit=crop',
+        image: '/images/stores/dubai-mall.png',
         coordinates: { lat: 25.1972, lng: 55.2744 },
         mapUrl: 'https://www.google.com/maps/search/?api=1&query=Audemars+Piguet+Dubai+Mall+Grand+Atrium+Dubai+UAE'
     }

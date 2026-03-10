@@ -5,10 +5,18 @@
     position: relative;
     width: 100%;
     cursor: pointer;
+    background-color: var(--color-bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform $transition-smooth, box-shadow $transition-smooth;
+    border: 1px solid var(--color-border);
 
     &:hover {
+        transform: translateY(-8px);
+        @include shadow-soft;
+
         .imageWrapper img {
-            transform: scale(1.05);
+            transform: scale(1.08); // Slightly dramatic zoom
         }
 
         .title::after {
@@ -22,8 +30,7 @@
     width: 100%;
     aspect-ratio: 1/1;
     overflow: hidden;
-    margin-bottom: 24px;
-    background-color: $color-obsidian; // Match site background
+    background-color: var(--color-bg-primary);
 
     img {
         object-fit: cover;
@@ -33,17 +40,19 @@
 
 .content {
     text-align: center;
+    padding: $spacing-24;
 }
 
 .title {
-    font-family: $font-family-serif;
+    font-family: $font-family-sans;
     font-size: 18px;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+    margin-bottom: $spacing-8;
     display: inline-block;
     position: relative;
-    color: $color-off-white;
+    color: var(--color-text-primary);
 
     &::after {
         content: '';
@@ -52,15 +61,13 @@
         left: 0;
         width: 0;
         height: 1px;
-        background-color: $color-rose-steel;
-        transition: width 0.4s ease;
+        background-color: var(--color-text-primary);
+        transition: width $transition-smooth;
     }
 }
 
 .description {
     font-family: $font-family-sans;
-    font-size: 12px;
-    color: $color-steel-light;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--color-text-secondary);
 }

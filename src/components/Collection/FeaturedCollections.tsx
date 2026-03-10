@@ -11,18 +11,22 @@ import 'swiper/css/effect-coverflow';
 import styles from './FeaturedCollections.module.scss';
 import CollectionCard from './CollectionCard';
 import { collections } from '../../constants/collections';
+import { useEntranceAnimation } from '../../hooks/useEntranceAnimation';
 
 const FeaturedCollections = () => {
+    const headerRef = useEntranceAnimation<HTMLDivElement>({ delay: 0.2, yOffset: 30 });
+    const carouselRef = useEntranceAnimation<HTMLDivElement>({ delay: 0.4, yOffset: 50 });
+
     return (
         <section className={styles.section}>
 
             <div className={`container ${styles.contentOverlay}`}>
-                <div className={styles.header}>
+                <div className={styles.header} ref={headerRef}>
                     <p>Curated Mastery</p>
                     <h2>THE COLLECTIONS</h2>
                 </div>
 
-                <div className={styles.carouselContainer}>
+                <div className={styles.carouselContainer} ref={carouselRef}>
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
                         effect={'coverflow'}

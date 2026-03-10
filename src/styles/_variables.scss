@@ -1,51 +1,65 @@
-// Core Palette (Static)
-$color-gold: #c6a664;
-$color-obsidian: #0a0a0a;
-$color-steel-dark: #2a2a2a;
-$color-steel-light: #888888;
-$color-rose-steel: #e0bfb8;
-$color-off-white: #f5f5f5;
+// Core Palette - Strict adherence to Deep Black, Primary Red, Grey, White
+$color-obsidian: #0a0a0a; // Deep Black
+$color-pure-black: #000000;
+$color-pure-white: #ffffff;
+$color-primary-red: #A5001D; // Classic luxury primary red
 $color-grey-dark: #1a1a1a;
 $color-grey-medium: #4a4a4a;
-$color-grey-light: #e0e0e0;
-$color-white-pure: #ffffff;
-$color-black-pure: #000000;
+$color-grey-light: #888888;
+$color-grey-surface: #2a2a2a; // Used for cards/borders in dark context
 
+// Legacy Color Fallbacks for backward compatibility in non-refactored components
+$color-off-white: $color-pure-white;
+$color-white: $color-pure-white;
+$color-white-pure: $color-pure-white;
+$color-black: $color-obsidian;
+$color-rose-steel: $color-primary-red;
+$color-steel-light: $color-grey-light;
+$color-steel-dark: $color-grey-dark;
+$color-gold: #c6a664;
+$accent-color: $color-primary-red;
 
-
-// SCSS Accessors (Mapped to CSS Variables)
+// SCSS Accessors (Mapped to CSS Variables for runtime switching if needed)
 $color-bg-primary: var(--color-bg-primary);
 $color-bg-secondary: var(--color-bg-secondary);
-$color-bg-tertiary: var(--color-bg-tertiary);
-
 $color-text-primary: var(--color-text-primary);
 $color-text-secondary: var(--color-text-secondary);
-$color-text-accent: var(--color-text-accent);
-
+$color-text-accent: var(--color-text-accent); // Mapped to primary red
 $color-border: var(--color-border);
 $color-overlay: var(--color-overlay);
 
-// Legacy/Static Mappings (Use these sparingly, prefer semantic above)
-$color-black: $color-obsidian;
-$color-white: $color-off-white;
-
 // Typography
-$font-family-serif: var(--font-cinzel), serif;
-$font-family-sans: var(--font-inter), sans-serif;
+$font-family-sans: var(--font-inter), 'Inter', sans-serif;
+// Fallback mapping to maintain backward compatibility but force sans everywhere internally
+$font-family-serif: $font-family-sans;
 
-// Spacing
-$spacing-xs: 6px; // Increased from 4px
-$spacing-sm: 12px; // Increased from 8px
-$spacing-md: 24px; // Increased from 16px
-$spacing-lg: 48px; // Increased from 32px
-$spacing-xl: 96px; // Increased from 64px
-$spacing-xxl: 160px; // Increased from 120px
+// Spacing System (8px Grid)
+$spacing-8: 8px;
+$spacing-16: 16px;
+$spacing-24: 24px;
+$spacing-32: 32px;
+$spacing-48: 48px;
+$spacing-64: 64px;
+$spacing-96: 96px;
+$spacing-128: 128px;
+
+// Legacy spacing aliases to avoid breaking existing imports before refactor
+$spacing-xs: $spacing-8;
+$spacing-sm: $spacing-16;
+$spacing-md: $spacing-24;
+$spacing-lg: $spacing-48;
+$spacing-xl: $spacing-96;
+$spacing-xxl: $spacing-128;
 
 // Breakpoints
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 $breakpoint-wide: 1440px;
+
+// Easing & Animations
+$transition-smooth: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 600ms cubic-bezier(0.25, 1, 0.5, 1);
 
 // Mixins
 @mixin flex-center {
@@ -57,14 +71,25 @@ $breakpoint-wide: 1440px;
 @mixin container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 $spacing-md;
+  padding: 0 $spacing-24;
 
   @media (min-width: $breakpoint-tablet) {
-    padding: 0 $spacing-lg;
+    padding: 0 $spacing-48;
   }
 }
 
-@mixin grid-responsive($min-width: 300px, $gap: 30px) {
+@mixin glassmorphism {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@mixin shadow-soft {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+@mixin grid-responsive($min-width: 300px, $gap: 32px) {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
   gap: $gap;

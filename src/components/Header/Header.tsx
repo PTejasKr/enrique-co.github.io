@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.scss';
 
 
@@ -13,6 +14,7 @@ const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -34,7 +36,7 @@ const Header = () => {
     const navLinks = [
         { name: 'Watches', href: '/collections' },
         { name: 'Our World', href: '/our-world' },
-        { name: 'Customer Persona', href: '/customer-persona' },
+        { name: 'Profile', href: '/customer-persona' },
         { name: 'Stories', href: '/stories' },
         { name: 'Services', href: '#' },
     ];
@@ -45,11 +47,14 @@ const Header = () => {
 
                 {/* Left: Navigation */}
                 <nav className={styles.leftNav}>
-                    {navLinks.map((link) => (
-                        <Link key={link.name} href={link.href} className={styles.navLink}>
-                            {link.name}
-                        </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.href || pathname?.startsWith(`${link.href}/`);
+                        return (
+                            <Link key={link.name} href={link.href} className={`${styles.navLink} ${isActive && link.href !== '#' ? styles.active : ''}`}>
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </nav>
 
                 {/* Center: Logo */}

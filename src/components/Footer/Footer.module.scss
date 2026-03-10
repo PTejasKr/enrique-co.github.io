@@ -1,10 +1,10 @@
 @import '../../styles/variables';
 
 .footer {
-    background-color: lighten($color-obsidian, 3%); // Subtle lift from pure black
-    color: $color-off-white;
-    padding: 100px 0 60px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    padding: $spacing-96 0 $spacing-64;
+    border-top: 1px solid var(--color-border);
 }
 
 .content {
@@ -21,16 +21,17 @@
 
 .newsletter {
     h3 {
-        font-family: $font-family-serif;
+        font-family: $font-family-sans;
         font-size: 20px;
-        margin-bottom: 24px;
-        color: $color-off-white;
+        font-weight: 500;
+        margin-bottom: $spacing-24;
+        color: var(--color-text-primary);
     }
 
     p {
         font-size: 14px;
-        margin-bottom: 30px;
-        color: $color-steel-light;
+        margin-bottom: $spacing-32;
+        color: var(--color-text-secondary);
         line-height: 1.6;
         max-width: 320px;
     }
@@ -38,26 +39,26 @@
 
 .form {
     display: flex;
-    border-bottom: 1px solid $color-steel-light;
+    border-bottom: 1px solid var(--color-text-secondary);
     padding-bottom: 12px;
     max-width: 320px;
-    transition: border-color 0.3s ease;
+    transition: border-color $transition-smooth;
 
     &:focus-within {
-        border-color: $color-rose-steel;
+        border-color: var(--color-text-accent);
     }
 
     input {
         background: transparent;
         border: none;
         flex-grow: 1;
-        color: $color-off-white;
+        color: var(--color-text-primary);
         font-family: $font-family-sans;
         font-size: 14px;
         letter-spacing: 0.05em;
 
         &::placeholder {
-            color: darken($color-steel-light, 20%);
+            color: rgba(255, 255, 255, 0.3);
         }
 
         &:focus {
@@ -68,27 +69,28 @@
     button {
         background: transparent;
         border: none;
-        color: $color-off-white;
+        color: var(--color-text-primary);
         text-transform: uppercase;
         font-size: 11px;
         letter-spacing: 0.15em;
         font-weight: 600;
         cursor: pointer;
-        transition: color 0.3s ease;
+        transition: color $transition-smooth;
 
         &:hover {
-            color: $color-rose-steel;
+            color: var(--color-text-accent);
         }
     }
 }
 
 .column {
     h4 {
+        font-family: $font-family-sans;
         font-size: 12px;
-        margin-bottom: 24px;
-        letter-spacing: 0.2em;
+        margin-bottom: $spacing-24;
+        letter-spacing: 0.15em; // Standardized tracking
         text-transform: uppercase;
-        color: $color-steel-light;
+        color: var(--color-text-secondary);
         font-weight: 600;
     }
 
@@ -97,30 +99,31 @@
     }
 
     li {
-        margin-bottom: 16px;
+        margin-bottom: $spacing-16;
     }
 
     a {
-        font-size: 13px;
-        color: darken($color-off-white, 20%);
-        transition: color 0.3s ease;
+        font-family: $font-family-sans;
+        font-size: 14px;
+        color: var(--color-text-secondary);
+        transition: color $transition-smooth;
         letter-spacing: 0.02em;
 
         &:hover {
-            color: $color-rose-steel;
+            color: var(--color-text-primary);
         }
     }
 }
 
 .bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+    padding-top: $spacing-32;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: $spacing-24;
     font-size: 11px;
-    color: darken($color-steel-light, 10%);
+    color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 
@@ -131,10 +134,10 @@
 
     .legalLinks {
         display: flex;
-        gap: 30px;
+        gap: $spacing-32;
 
         a:hover {
-            color: $color-off-white;
+            color: var(--color-text-primary);
         }
     }
 }

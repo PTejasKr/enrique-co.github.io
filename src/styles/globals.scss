@@ -1,22 +1,19 @@
 @import './variables';
 
 // CSS Variables Definition
-// CSS Variables Definition
 :root {
-    // Brand Identity (Obsidian Mode)
+    // Brand Identity (Premium Dark Mode)
     --color-bg-primary: #0a0a0a;
-    --color-bg-secondary: #0e0e0e;
-    --color-bg-tertiary: #141414;
+    --color-bg-secondary: #111111;
+    --color-bg-tertiary: #1a1a1a;
 
     --color-text-primary: #ffffff;
-    --color-text-secondary: rgba(255, 255, 255, 0.8);
-    --color-text-accent: #c6a664; // Gold accent
+    --color-text-secondary: #888888;
+    --color-text-accent: #A5001D; // Luxury Red
 
-    --color-border: rgba(255, 255, 255, 0.1);
-    --color-overlay: rgba(0, 0, 0, 0.7);
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-overlay: rgba(0, 0, 0, 0.85);
 }
-
-// [data-theme='light'] removed as default is now Teal/Light
 
 * {
     box-sizing: border-box;
@@ -42,26 +39,27 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font-family-serif;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-family: $font-family-sans;
+    font-weight: 500;
+    letter-spacing: -0.01em; // Modern tight tracking for headings
+    text-transform: none; // Removing uppercase for a more contemporary luxury look
+    margin-bottom: $spacing-24;
 }
 
+// Global Link Hover - Underline Slide Effect
 a {
     color: inherit;
     text-decoration: none;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-        opacity: 0.7;
-    }
+    position: relative;
+    transition: color $transition-smooth;
 }
 
+// Premium Image Handling
 img {
     max-width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
 }
 
 // Utility Classes
@@ -70,5 +68,30 @@ img {
 }
 
 .text-gold {
-    color: $color-gold;
+    color: #c6a664; // Keeping gold as an explicit override if needed elsewhere
+}
+
+.text-accent {
+    color: var(--color-text-accent);
+}
+
+// Global Animation Classes (For Intersection Observer)
+.fade-in {
+    opacity: 0;
+    transition: opacity $transition-slow;
+
+    &.visible {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity $transition-slow, transform $transition-slow;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

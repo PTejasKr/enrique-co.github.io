@@ -65,6 +65,18 @@ export default function StoriesPage() {
                         This upcoming release is an homage to the masters of risk. A heavy, unapologetic statement crafted
                         for the supreme winner. Your time is coming.
                     </p>
+
+                    {/* The Supreme Winner Image Asset */}
+                    <div className={styles.winnerImageWrapper}>
+                        <Image
+                            src="/images/stories/godfather.png"
+                            alt="The Supreme Winner"
+                            width={500}
+                            height={600}
+                            style={{ objectFit: "cover" }}
+                            className={styles.winnerInnerImage}
+                        />
+                    </div>
                 </div>
             </section>
 

@@ -4,54 +4,65 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 32px;
+    padding: $spacing-16 $spacing-32;
     font-family: $font-family-sans;
     font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 600;
+    letter-spacing: 0.15em;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: all $transition-smooth;
     border: 1px solid transparent;
+    border-radius: 4px; // Rounded edges as requested
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: translateY(-2px);
+        @include shadow-soft;
+    }
 
     // Primary: White text on Dark (or Transparent with border)
     &.primary {
-        background-color: transparent;
-        border-color: $color-off-white;
-        color: $color-off-white;
+        background-color: var(--color-bg-primary);
+        border-color: var(--color-border);
+        color: var(--color-text-primary);
 
         &:hover {
-            background-color: $color-off-white;
-            color: $color-obsidian;
+            background-color: var(--color-text-primary);
+            color: var(--color-bg-primary);
+            border-color: transparent;
         }
     }
 
-    // Secondary: Dark text on White (or reverse for this theme)
+    // Secondary: Accent color
     &.secondary {
-        background-color: $color-rose-steel;
-        color: $color-obsidian;
-        border-color: $color-rose-steel;
+        background-color: var(--color-text-accent);
+        color: var(--color-text-primary);
+        border-color: var(--color-text-accent);
 
         &:hover {
             background-color: transparent;
-            color: $color-rose-steel;
+            color: var(--color-text-accent);
         }
     }
 
     // Outline: Transparent with border
     &.outline {
         background-color: transparent;
-        border-color: rgba(255, 255, 255, 0.2);
-        color: $color-off-white;
+        border-color: rgba(255, 255, 255, 0.3);
+        color: var(--color-text-primary);
 
         &:hover {
-            border-color: $color-rose-steel;
-            color: $color-rose-steel;
+            border-color: var(--color-text-accent);
+            color: var(--color-text-accent);
+            background-color: rgba(255, 255, 255, 0.05);
         }
     }
 
     &.disabled {
         opacity: 0.5;
         cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
     }
 }
