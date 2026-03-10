@@ -40,6 +40,34 @@ export default function StoriesPage() {
                 <p>The chronicles of our journey, told by those who walk with us.</p>
             </section>
 
+            {/* Upcoming Design Story - Supreme Casino Winner */}
+            <section className={styles.upcomingFlyer}>
+                <Image
+                    src="/images/stories/godfather.png"
+                    alt="The Godfather Watch - Upcoming Design"
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                    className={styles.flyerBackground}
+                    priority
+                />
+                <div className={styles.flyerContent}>
+                    <span className={styles.flyerLabel}>Upcoming Design // Concept #015</span>
+                    <h2>The Supreme Winner</h2>
+                    <p>
+                        In the neon glow of the high-stakes rooms, fortunes change hands on the turn of a card.
+                        It takes a specific caliber of individual to look risk in the eye and smile.
+                    </p>
+                    <p>
+                        At Enrique Maison, we respect those who write their own destiny. Those who understand that true
+                        power isn&apos;t just about holding the winning hand, it&apos;s about the audacity to play the game.
+                    </p>
+                    <p>
+                        This upcoming release is an homage to the masters of risk. A heavy, unapologetic statement crafted
+                        for the supreme winner. Your time is coming.
+                    </p>
+                </div>
+            </section>
+
             {/* Media Centre - Newspaper Snippets */}
             <section className={styles.section}>
                 <h2>Media Centre</h2>
@@ -87,7 +115,7 @@ export default function StoriesPage() {
                 <div className={styles.reviewsGrid}>
                     {reviews.map((review, i) => (
                         <div key={i} className={styles.reviewCard}>
-                            <p className={styles.reviewText}>"{review.text}"</p>
+                            <p className={styles.reviewText}>&quot;{review.text}&quot;</p>
                             <p className={styles.reviewer}>— {review.author}</p>
                         </div>
                     ))}

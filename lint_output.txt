@@ -3,14 +3,101 @@
 > eslint
 
 
-C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Configurator\Configurator.tsx
-  19:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\app\collections\[slug]\page.tsx
+  2:8  warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
 
-C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Footer\Footer.tsx
-  4:8  warning  'Button' is defined but never used  @typescript-eslint/no-unused-vars
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\app\stories\page.tsx
+   62:34  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   62:76  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:62  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  118:76  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
 
-C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Story\StoryCard.tsx
-  5:8  warning  'Button' is defined but never used  @typescript-eslint/no-unused-vars
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Analytics\CustomerPersonaDashboard.tsx
+    3:27  warning  'useMemo' is defined but never used       @typescript-eslint/no-unused-vars
+    6:26  warning  'Sector' is defined but never used        @typescript-eslint/no-unused-vars
+   10:38  warning  'Award' is defined but never used         @typescript-eslint/no-unused-vars
+  172:94  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  183:52  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
 
-Γ£û 3 problems (1 error, 2 warnings)
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Auth\LoginModal.tsx
+   4:8   warning  'ReactDOM' is defined but never used                             @typescript-eslint/no-unused-vars
+  76:27  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\Header\Header.tsx
+  9:24  warning  'Search' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\ui\GlobalLoader.tsx
+   9:11  warning  'pathname' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+  27:13  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\ui\GlobalLoader.tsx:27:13
+  25 |             return () => clearTimeout(timer);
+  26 |         } else {
+> 27 |             setIsLoading(false);
+     |             ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  28 |         }
+  29 |
+  30 |     }, []);  react-hooks/set-state-in-effect
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\ui\ShaderBackground.tsx
+  76:13  error    Error: This value cannot be modified
+
+Modifying a value previously passed as an argument to a hook is not allowed. Consider moving the modification before calling the hook.
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\ui\ShaderBackground.tsx:76:13
+  74 |     useFrame((state) => {
+  75 |         if (mesh.current) {
+> 76 |             uniforms.time.value = state.clock.elapsedTime
+     |             ^^^^^^^^^^^^^ `uniforms` cannot be modified
+  77 |             uniforms.intensity.value = 1.0 + Math.sin(state.clock.elapsedTime * 2) * 0.3
+  78 |         }
+  79 |     })  react-hooks/immutability
+  95:10  warning  'EnergyRing' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\ui\kinetic-dots-loader.tsx
+  3:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\ui\theme-toggle.tsx
+  18:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\components\ui\theme-toggle.tsx:18:9
+  16 |         // Check initial theme
+  17 |         const currentTheme = document.documentElement.getAttribute('data-theme');
+> 18 |         setIsDark(currentTheme !== 'light');
+     |         ^^^^^^^^^ Avoid calling setState() directly within an effect
+  19 |     }, []);
+  20 |
+  21 |     const toggleTheme = () => {  react-hooks/set-state-in-effect
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\context\ThemeContext.tsx
+  21:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\punya\Desktop\oe watch\audemars-piguet-clone\src\context\ThemeContext.tsx:21:13
+  19 |         const savedTheme = localStorage.getItem('theme') as Theme;
+  20 |         if (savedTheme) {
+> 21 |             setTheme(savedTheme);
+     |             ^^^^^^^^ Avoid calling setState() directly within an effect
+  22 |             document.documentElement.setAttribute('data-theme', savedTheme);
+  23 |         } else {
+  24 |             document.documentElement.setAttribute('data-theme', 'dark');  react-hooks/set-state-in-effect
+
+Γ£û 20 problems (11 errors, 9 warnings)
 

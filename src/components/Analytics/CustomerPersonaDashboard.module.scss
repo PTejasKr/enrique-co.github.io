@@ -1,13 +1,13 @@
 @import '../../styles/variables';
 
 // Local variables for this clean UI, overriding global dark theme
-$bg-light: #f8fafc;
-$bg-white: #ffffff;
-$text-main: #1e293b;
-$text-muted: #64748b;
-$border-color: #e2e8f0;
+$bg-light: #000000;
+$bg-white: #111111;
+$text-main: #f8fafc;
+$text-muted: #94a3b8;
+$border-color: #262626;
 $accent-color: #4f46e5;
-$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
 
 .dashboardContainer {
     font-family: var(--font-inter), sans-serif;
@@ -337,8 +337,8 @@ $shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     gap: 8px;
 
     .chipGreen {
-        background: #dcfce7;
-        color: #15803d;
+        background: rgba(21, 128, 61, 0.2); // Darker green background
+        color: #4ade80; // Light green text for readability on dark
         font-size: 12px;
         padding: 4px 10px;
         border-radius: 12px;
@@ -357,7 +357,7 @@ $shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
         gap: 10px;
         font-size: 13px;
         padding: 6px 0;
-        border-bottom: 1px solid #f1f5f9;
+        border-bottom: 1px solid $border-color; // Use the dark border variable
 
         &:last-child {
             border-bottom: none;
