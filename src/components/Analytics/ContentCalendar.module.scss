@@ -1,0 +1,162 @@
+@import '../../styles/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-bg-primary;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin: $spacing-24 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+  }
+}
+
+.leftPanel {
+  flex: 1;
+  padding: $spacing-32;
+  background-color: var(--color-bg-secondary, #111111);
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-16;
+}
+
+.dateHeader {
+  font-family: $font-family-sans;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-16;
+}
+
+.calendarItems {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-16;
+}
+
+.itemCard {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: $spacing-16 $spacing-24;
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-16;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.itemDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.itemContent {
+  flex: 1;
+}
+
+.itemTitle {
+  font-family: $font-family-sans;
+  font-size: 1rem;
+  font-weight: 500;
+  color: $color-text-primary;
+  margin-bottom: 8px;
+}
+
+.itemLines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .line {
+    height: 4px;
+    border-radius: 2px;
+    opacity: 0.8;
+  }
+}
+
+.rightPanel {
+  width: 100%;
+  background-color: $color-grey-dark;
+  padding: $spacing-32;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 350px;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+.calendarNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-24;
+  color: $color-text-primary;
+  font-family: $font-family-sans;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  button {
+    background: none;
+    border: none;
+    color: $color-text-secondary;
+    cursor: pointer;
+    font-size: 1.2rem;
+    &:hover {
+      color: $color-text-primary;
+    }
+  }
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px 8px;
+  text-align: center;
+  margin-bottom: $spacing-48;
+
+  span {
+    color: $color-text-secondary;
+    font-size: 0.85rem;
+    font-family: $font-family-sans;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: $color-text-primary;
+      border-radius: 50%;
+    }
+  }
+}
+
+.legend {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-16;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: $font-family-sans;
+  font-size: 0.85rem;
+  color: $color-text-secondary;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
