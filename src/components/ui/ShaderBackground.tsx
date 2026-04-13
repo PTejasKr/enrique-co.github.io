@@ -1,6 +1,9 @@
 "use client"
 
 import { useRef, useMemo } from "react"
+import { useTheme } from "../../context/ThemeContext"
+
+// ... (skipping shaders for brevity)
 import { Canvas, useFrame } from "@react-three/fiber"
 import * as THREE from "three"
 
@@ -117,6 +120,24 @@ function EnergyRing({
 }
 
 const ShaderBackground = () => {
+    const { theme } = useTheme();
+
+    const colors = useMemo(() => {
+        if (theme === 'dark') {
+            return {
+                base: '#0a0a0a',
+                color1: '#1a0d00', // Very dark brown
+                color2: '#000000'
+            };
+        } else {
+            return {
+                base: '#FFFDF1', // Cream
+                color1: '#FFCE99', // Peach
+                color2: '#FFFDF1'
+            };
+        }
+    }, [theme]);
+
     return (
         <div style={{
             position: 'fixed',
@@ -126,10 +147,15 @@ const ShaderBackground = () => {
             height: '100vh',
             zIndex: -1,
             pointerEvents: 'none',
-            background: '#0a0a0a' // Fallback/Base color
+            background: colors.base,
+            transition: 'background 0.5s ease'
         }}>
             <Canvas camera={{ position: [0, 0, 1] }}>
-                <ShaderPlane position={[0, 0, 0]} color1="#1a1a1a" color2="#000000" />
+                <ShaderPlane 
+                    position={[0, 0, 0]} 
+                    color1={colors.color1} 
+                    color2={colors.color2} 
+                />
             </Canvas>
         </div>
     );

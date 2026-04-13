@@ -6,7 +6,8 @@ import { usePathname } from 'next/navigation';
 import styles from './Header.module.scss';
 
 
-import LoginModal from '../Auth/LoginModal'; // Adjust path if needed
+import { ThemeToggle } from '../ui/theme-toggle';
+import LoginModal from '../Auth/LoginModal';
 import { MapPin, User, Search } from 'lucide-react';
 
 
@@ -72,7 +73,8 @@ const Header = () => {
                     <button className={styles.iconLink} onClick={() => setIsLoginOpen(true)}>
                         <User className="w-5 h-5" strokeWidth={1.5} />
                     </button>
-                    {/* Theme Toggle Removed */}
+                    
+                    <ThemeToggle className={styles.themeToggle} />
 
                     {/* Mobile Toggle Trigger */}
                     <div className={styles.mobileToggle} onClick={toggleMobileMenu}>

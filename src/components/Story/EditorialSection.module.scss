@@ -5,7 +5,7 @@
     position: relative;
     overflow: hidden;
     color: $color-off-white;
-    background-color: lighten($color-obsidian, 2%);
+    background-color: var(--color-bg-secondary);
 }
 
 .background {

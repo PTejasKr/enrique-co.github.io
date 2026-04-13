@@ -110,7 +110,7 @@ $shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
     transition: background 0.2s;
 
     &:hover {
-        background: darken($accent-color, 10%);
+        background: $color-orange;
     }
 }
 
@@ -264,12 +264,12 @@ $shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
     }
 
     .actionBox {
-        background: lighten($accent-color, 45%);
+        background: $color-orange;
         padding: 12px;
         border-radius: 6px;
         border-left: 4px solid $accent-color;
         font-size: 13px;
-        color: darken($accent-color, 20%);
+        color: $color-orange;
     }
 }
 

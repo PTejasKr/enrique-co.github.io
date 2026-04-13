@@ -1,18 +1,36 @@
 @import './variables';
 
-// CSS Variables Definition
+// Color Hunt Palette: https://colorhunt.co/palette/fffdf1ffce99ff9644562f00
 :root {
-    // Brand Identity (Premium Dark Mode)
+    --palette-cream: #FFFDF1;
+    --palette-peach: #FFCE99;
+    --palette-orange: #FF9644;
+    --palette-brown: #562F00;
+
+    // Default to Dark Mode (Jet Black)
     --color-bg-primary: #0a0a0a;
-    --color-bg-secondary: #111111;
-    --color-bg-tertiary: #1a1a1a;
+    --color-bg-secondary: #1a1a1a;
+    --color-bg-tertiary: #2a2a2a;
 
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #888888;
-    --color-text-accent: #A5001D; // Luxury Red
+    --color-text-primary: #f5f5f5;
+    --color-text-secondary: #cccccc;
+    --color-text-accent: var(--palette-orange);
 
-    --color-border: rgba(255, 255, 255, 0.08);
-    --color-overlay: rgba(0, 0, 0, 0.85);
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-overlay: rgba(10, 10, 10, 0.9);
+}
+
+[data-theme='light'] {
+    --color-bg-primary: #f5f5f5;
+    --color-bg-secondary: #e5e5e5;
+    --color-bg-tertiary: #d4d4d4;
+
+    --color-text-primary: #0a0a0a;
+    --color-text-secondary: #4a4a4a;
+    --color-text-accent: var(--palette-orange);
+
+    --color-border: rgba(10, 10, 10, 0.1);
+    --color-overlay: rgba(245, 245, 245, 0.9);
 }
 
 * {

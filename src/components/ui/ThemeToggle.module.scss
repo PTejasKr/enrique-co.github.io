@@ -1,0 +1,101 @@
+.toggleButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 56px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 500ms;
+    overflow: hidden;
+    background-color: var(--color-bg-primary, #ffffff);
+    border: 1px solid var(--color-border, #e5e7eb);
+    outline: none;
+}
+
+.toggleButton:hover {
+    box-shadow: 0 0 15px rgba(255, 150, 68, 0.3);
+}
+
+.backgroundOverlay {
+    position: absolute;
+    inset: 0;
+    transition: transform 700ms ease-in-out;
+    background-color: var(--palette-peach, #ffce99);
+    opacity: 0.2;
+}
+
+.overlayDark {
+    transform: translateX(100%);
+}
+
+.overlayLight {
+    transform: translateX(0);
+}
+
+.innerContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+    padding: 0 4px;
+}
+
+.knob {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    transition: all 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--palette-orange, #ff9644);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.knobDark {
+    left: calc(100% - 24px); /* 56px - 4px padding - 20px knob = 32px, left: 32px. Or calc(100% - 24px) */
+}
+
+.knobLight {
+    left: 4px;
+}
+
+.icon {
+    width: 12px;
+    height: 12px;
+}
+
+.knobIconDark {
+    color: var(--palette-brown, #562f00);
+}
+
+.knobIconLight {
+    color: var(--palette-cream, #fffdf1);
+}
+
+.iconBehind {
+    transition: opacity 300ms;
+}
+
+.iconMoonBehind {
+    margin-left: auto;
+    color: var(--palette-brown, #562f00);
+}
+
+.iconSunBehind {
+    margin-right: auto;
+    color: var(--palette-cream, #fffdf1);
+}
+
+.opacityZero {
+    opacity: 0;
+}
+
+.opacityForty {
+    opacity: 0.4;
+}

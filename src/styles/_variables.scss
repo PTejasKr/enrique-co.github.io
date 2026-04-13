@@ -1,23 +1,30 @@
-// Core Palette - Strict adherence to Deep Black, Primary Red, Grey, White
-$color-obsidian: #0a0a0a; // Deep Black
+// Core Palette - ENRIQUE Brand (Strict Palette)
+$color-cream: #FFFDF1;
+$color-peach: #FFCE99;
+$color-orange: #FF9644;
+$color-brown: #562F00;
+
+// Legacy / Utility Mappings
 $color-pure-black: #000000;
+$color-obsidian: var(--color-bg-primary); // Make backgrounds dynamic
 $color-pure-white: #ffffff;
-$color-primary-red: #A5001D; // Classic luxury primary red
-$color-grey-dark: #1a1a1a;
+$color-primary-red: var(--color-text-accent);
+
+$color-grey-dark: var(--color-bg-secondary);
 $color-grey-medium: #4a4a4a;
-$color-grey-light: #888888;
-$color-grey-surface: #2a2a2a; // Used for cards/borders in dark context
+$color-grey-light: var(--color-text-secondary);
+$color-grey-surface: var(--color-bg-secondary);
 
 // Legacy Color Fallbacks for backward compatibility in non-refactored components
-$color-off-white: $color-pure-white;
-$color-white: $color-pure-white;
+$color-off-white: var(--color-text-primary);
+$color-white: var(--color-text-primary);
 $color-white-pure: $color-pure-white;
-$color-black: $color-obsidian;
-$color-rose-steel: $color-primary-red;
-$color-steel-light: $color-grey-light;
-$color-steel-dark: $color-grey-dark;
+$color-black: var(--color-bg-primary);
+$color-rose-steel: var(--color-text-accent);
+$color-steel-light: var(--color-text-secondary);
+$color-steel-dark: var(--color-bg-secondary);
 $color-gold: #c6a664;
-$accent-color: $color-primary-red;
+$accent-color: var(--color-text-accent);
 
 // SCSS Accessors (Mapped to CSS Variables for runtime switching if needed)
 $color-bg-primary: var(--color-bg-primary);
@@ -79,10 +86,10 @@ $transition-slow: 600ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @mixin glassmorphism {
-  background: rgba(10, 10, 10, 0.6);
+  background: var(--color-overlay);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--color-border);
 }
 
 @mixin shadow-soft {
