@@ -80,45 +80,6 @@ const Careers = () => {
                 </motion.div>
             </section>
 
-            {/* Our Legacy Section */}
-            <motion.section 
-                className={styles.legacy}
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true, margin: "-100px" }}
-            >
-                <motion.div className={styles.legacyContent} variants={fadeInUp}>
-                    <span className={styles.legacyHighlight}>200 Years of Mastery</span>
-                    <h2>Our Legacy</h2>
-                    <p>
-                        From a small atelier in Geneva to a global icon of luxury, the Enrique Watch Company has defined 
-                        precision for over two centuries. We are not just making watches; we are crafting heirlooms 
-                        that transcend generations.
-                    </p>
-                    <p>
-                        Joining our team means becoming a custodian of this history, carrying forward the secrets 
-                        of horology while defining its future.
-                    </p>
-                </motion.div>
-                <motion.div 
-                    className={styles.legacyImageWrapper}
-                    variants={{
-                        initial: { opacity: 0, x: 50 },
-                        whileInView: { opacity: 1, x: 0 }
-                    }}
-                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
-                >
-                    <Image 
-                        src="/images/about/legacy.png" 
-                        alt="200 Years of Mastery" 
-                        fill 
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        style={{ objectFit: 'cover' }}
-                    />
-                </motion.div>
-            </motion.section>
-
             {/* Craftsmanship Section */}
             <motion.section 
                 className={styles.craftsmanship}
@@ -167,7 +128,7 @@ const Careers = () => {
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
                 >
                     <Image
-                        src="/images/about/school.jpg"
+                        src="/images/about/legacy.png"
                         alt="The Enrique School of Horology"
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
