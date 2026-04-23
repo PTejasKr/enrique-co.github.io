@@ -29,7 +29,6 @@ const Footer = () => {
                     <div className={styles.column}>
                         <h4>Corporate</h4>
                         <ul>
-                            <li><Link href="/brand-values">Brand Values</Link></li>
                             <li><Link href="/foundation">Foundation</Link></li>
                             <li><Link href="/careers">Careers</Link></li>
                             <li><Link href="/press-lounge">Press Lounge</Link></li>

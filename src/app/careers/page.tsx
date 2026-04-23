@@ -128,7 +128,7 @@ const Careers = () => {
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
                 >
                     <Image
-                        src="/images/about/legacy.png"
+                        src="/images/about/school.jpg"
                         alt="The Enrique School of Horology"
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
