@@ -1,12 +1,9 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import styles from './Careers.module.scss';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: 'Careers | Enrique Legacy',
-    description: 'Meet the artisans and leaders behind the Enrique Watch Company.',
-};
+import { motion } from 'framer-motion';
 
 const teamMembers = [
     {
@@ -25,35 +22,73 @@ const teamMembers = [
     }
 ];
 
+const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+} as any;
+
+const staggerContainer = {
+    initial: {},
+    whileInView: {
+        transition: {
+            staggerChildren: 0.2
+        }
+    },
+    viewport: { once: true }
+};
+
 const Careers = () => {
     return (
         <div className={`container ${styles.container}`}>
-            <section className={styles.hero}>
+            <motion.section 
+                className={styles.hero}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
+            >
                 <h1>Custodians of Time</h1>
                 <p>Meet the team behind the legacy</p>
-            </section>
+            </motion.section>
 
             <section className={styles.department}>
-                <h2>Our Team</h2>
-                <div className={styles.grid}>
+                <motion.h2 {...fadeInUp}>Our Team</motion.h2>
+                <motion.div 
+                    className={styles.grid}
+                    variants={staggerContainer}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true }}
+                >
                     {teamMembers.map(member => (
-                        <div key={member.id} className={styles.card}>
+                        <motion.div 
+                            key={member.id} 
+                            className={styles.card}
+                            variants={fadeInUp}
+                        >
                             <div className={styles.imageWrapper}>
-                                <Image src={member.image} alt={member.name} fill />
+                                <Image src={member.image} alt={member.name} fill sizes="(max-width: 768px) 100vw, 50vw" />
                             </div>
                             <div className={styles.info}>
                                 <h3>{member.name}</h3>
                                 <h4>{member.role}</h4>
                                 <p className={styles.bio}>{member.bio}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </section>
 
             {/* Our Legacy Section */}
-            <section className={styles.legacy}>
-                <div className={styles.legacyContent}>
+            <motion.section 
+                className={styles.legacy}
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true, margin: "-100px" }}
+            >
+                <motion.div className={styles.legacyContent} variants={fadeInUp}>
                     <span className={styles.legacyHighlight}>200 Years of Mastery</span>
                     <h2>Our Legacy</h2>
                     <p>
@@ -65,44 +100,81 @@ const Careers = () => {
                         Joining our team means becoming a custodian of this history, carrying forward the secrets 
                         of horology while defining its future.
                     </p>
-                </div>
-                <div className={styles.legacyImageWrapper}>
+                </motion.div>
+                <motion.div 
+                    className={styles.legacyImageWrapper}
+                    variants={{
+                        initial: { opacity: 0, x: 50 },
+                        whileInView: { opacity: 1, x: 0 }
+                    }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
+                >
                     <Image 
                         src="/images/about/legacy.png" 
                         alt="200 Years of Mastery" 
                         fill 
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         style={{ objectFit: 'cover' }}
                     />
-                </div>
-            </section>
+                </motion.div>
+            </motion.section>
 
             {/* Craftsmanship Section */}
-            <section className={styles.craftsmanship}>
+            <motion.section 
+                className={styles.craftsmanship}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5 }}
+            >
                 <div className={styles.craftHeader}>
-                    <h2>Craftsmanship at Heart</h2>
-                    <p>Every Enrique timepiece is the result of thousands of hours of dedicated artistry and technical innovation.</p>
+                    <motion.h2 {...fadeInUp}>Craftsmanship at Heart</motion.h2>
+                    <motion.p {...fadeInUp} transition={{ delay: 0.2, duration: 0.8 }}>
+                        Every Enrique timepiece is the result of thousands of hours of dedicated artistry and technical innovation.
+                    </motion.p>
                 </div>
-                <div className={styles.craftImageFull}>
+                <motion.div 
+                    className={styles.craftImageFull}
+                    initial={{ scale: 1.1, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as any }}
+                >
                     <Image 
                         src="/images/about/craftsmanship.png" 
                         alt="Watchmaking Craftsmanship" 
                         fill 
+                        sizes="100vw"
                         style={{ objectFit: 'cover' }}
                     />
-                </div>
-            </section>
+                </motion.div>
+            </motion.section>
 
             {/* The Enrique School Section */}
-            <section className={styles.school}>
-                <div className={styles.schoolImageWrapper}>
+            <motion.section 
+                className={styles.school}
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true, margin: "-100px" }}
+            >
+                <motion.div 
+                    className={styles.schoolImageWrapper}
+                    variants={{
+                        initial: { opacity: 0, x: -50 },
+                        whileInView: { opacity: 1, x: 0 }
+                    }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
+                >
                     <Image
                         src="/images/about/school.jpg"
                         alt="The Enrique School of Horology"
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         style={{ objectFit: 'cover' }}
                     />
-                </div>
-                <div className={styles.schoolContent}>
+                </motion.div>
+                <motion.div className={styles.schoolContent} variants={fadeInUp}>
                     <h2>The Enrique School</h2>
                     <p>To preserve the art of fine watchmaking, we offer full scholarships to aspiring horologists.</p>
                     <p>Our 3-year intense program covers:</p>
@@ -112,8 +184,8 @@ const Careers = () => {
                         <li>Design and movement assembly.</li>
                     </ul>
                     <p>Graduates are offered apprenticeships within our atelier or placement in the luxury industry.</p>
-                </div>
-            </section>
+                </motion.div>
+            </motion.section>
         </div>
     );
 };

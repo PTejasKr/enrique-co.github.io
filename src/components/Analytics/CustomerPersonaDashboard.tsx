@@ -8,7 +8,8 @@ import {
 import {
     Users, DollarSign, TrendingUp, Activity,
     Calendar, Download, ChevronDown,
-    Briefcase, MapPin, Zap, Target
+    Briefcase, MapPin, Zap, Target,
+    LucideIcon
 } from 'lucide-react';
 import styles from './CustomerPersonaDashboard.module.scss';
 
@@ -169,7 +170,7 @@ const Card = ({ title, children, className = '' }: { title?: string, children: R
     </div>
 );
 
-const KPICard = ({ title, value, icon: Icon, change }: { title: string, value: string, icon: React.ElementType, change?: string }) => (
+const KPICard = ({ title, value, icon: Icon, change }: { title: string, value: string, icon: LucideIcon, change?: string }) => (
     <div className={styles.kpiCard}>
         <div className={styles.kpiHeader}>
             <span className={styles.kpiTitle}>{title}</span>
