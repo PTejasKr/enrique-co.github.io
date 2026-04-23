@@ -2,11 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import KineticDotsLoader from "@/components/ui/kinetic-dots-loader";
-import { usePathname } from "next/navigation";
-
 export default function GlobalLoader() {
     const [isLoading, setIsLoading] = useState(true);
-    const pathname = usePathname();
 
     useEffect(() => {
         // Simulate initial load or route change load
@@ -24,7 +21,9 @@ export default function GlobalLoader() {
             }, 2500); // 2.5s duration for the animation to play out
             return () => clearTimeout(timer);
         } else {
-            setIsLoading(false);
+            requestAnimationFrame(() => {
+                setIsLoading(false);
+            });
         }
 
     }, []);

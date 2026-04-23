@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { X, Mail, Lock, ArrowRight } from 'lucide-react';
 import styles from './LoginModal.module.scss';
-import ReactDOM from 'react-dom';
 
 interface LoginModalProps {
     isOpen: boolean;
@@ -73,7 +72,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                 </form>
 
                 <div className={styles.footer}>
-                    <p>Don't have an account? <a href="#">Create one</a></p>
+                    <p>Don&apos;t have an account? <a href="#">Create one</a></p>
                 </div>
             </div>
         </div>

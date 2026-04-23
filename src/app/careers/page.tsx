@@ -13,13 +13,15 @@ const teamMembers = [
         id: 1,
         name: 'Tejas Kr. Punyap',
         role: 'Co-Founder & Director',
-        image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2600&auto=format&fit=crop'
+        image: '/images/team/tejas.png',
+        bio: 'Visionary leader dedicated to preserving the heritage of artisanal horology while embracing modern innovation.'
     },
     {
         id: 2,
         name: 'Sanjeev Kumar',
         role: 'Co-Founder & Creative Lead',
-        image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2600&auto=format&fit=crop'
+        image: '/images/team/sanjeev.png',
+        bio: 'Master of aesthetic precision, ensuring every Enrique timepiece tells a story of elegance and technical mastery.'
     }
 ];
 
@@ -42,6 +44,7 @@ const Careers = () => {
                             <div className={styles.info}>
                                 <h3>{member.name}</h3>
                                 <h4>{member.role}</h4>
+                                <p className={styles.bio}>{member.bio}</p>
                             </div>
                         </div>
                     ))}

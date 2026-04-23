@@ -1,13 +1,13 @@
 @import '../../styles/variables';
 
-// Local variables for this clean UI, overriding global dark theme
-$bg-light: #000000;
-$bg-white: #111111;
-$text-main: #f8fafc;
-$text-muted: #94a3b8;
-$border-color: #262626;
-$accent-color: #4f46e5;
-$shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+// Theme-adaptive variables
+$bg-light: var(--color-bg-primary);
+$bg-white: var(--color-bg-secondary);
+$text-main: var(--color-text-primary);
+$text-muted: var(--color-text-secondary);
+$border-color: var(--color-border);
+$accent-color: var(--color-text-accent);
+$shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
 .dashboardContainer {
     font-family: var(--font-inter), sans-serif;
@@ -15,17 +15,15 @@ $shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
     color: $text-main;
     min-height: 100vh;
     padding: 24px;
-    // Reset any global styles that might interfere with this "clean" look
     text-align: left;
 
-    // Enclosed box style (as requested "add a box")
     max-width: 1400px;
     margin: 40px auto;
     border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
-    z-index: 10; // Ensure it sits above background effects
+    z-index: 10;
 }
 
 .header {
@@ -66,7 +64,7 @@ $shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
     gap: 8px;
 
     .dropdown {
-        background: transparent;
+        background: $bg-light;
         border: none;
         font-size: 14px;
         font-weight: 500;
@@ -75,6 +73,12 @@ $shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
         padding-right: 20px;
         cursor: pointer;
         outline: none;
+
+        option {
+            background-color: $bg-white;
+            color: $text-main;
+            padding: 8px;
+        }
     }
 
     .dropdownIcon {
@@ -215,16 +219,16 @@ $shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
 }
 
 .chartTooltip {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid $border-color;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
     padding: 8px;
     border-radius: 4px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
     .tooltipLabel {
         font-size: 12px;
         font-weight: 600;
-        color: $text-main;
+        color: var(--color-text-primary);
         margin: 0;
     }
 }
@@ -264,12 +268,16 @@ $shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.5);
     }
 
     .actionBox {
-        background: $color-orange;
+        background: rgba(var(--palette-orange-rgb, 255, 150, 68), 0.1);
         padding: 12px;
         border-radius: 6px;
         border-left: 4px solid $accent-color;
         font-size: 13px;
-        color: $color-orange;
+        color: $text-main;
+
+        strong {
+            color: $accent-color;
+        }
     }
 }
 

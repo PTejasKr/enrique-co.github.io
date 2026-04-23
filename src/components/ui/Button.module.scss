@@ -49,13 +49,13 @@
     // Outline: Transparent with border
     &.outline {
         background-color: transparent;
-        border-color: rgba(255, 255, 255, 0.3);
+        border-color: var(--color-border);
         color: var(--color-text-primary);
 
         &:hover {
             border-color: var(--color-text-accent);
             color: var(--color-text-accent);
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(var(--palette-orange-rgb, 255, 150, 68), 0.05);
         }
     }
 

@@ -1,51 +1,59 @@
 @import '../../styles/variables';
 
 .container {
-    padding-top: 100px;
+    padding-top: 140px;
     padding-bottom: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards;
 
     h1 {
         font-family: $font-family-serif;
-        font-size: 56px;
+        font-size: clamp(40px, 8vw, 72px);
+        font-weight: 300;
         margin-bottom: 24px;
-        color: $color-black;
+        color: $color-text-primary;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
     }
 
     p {
         font-family: $font-family-sans;
-        font-size: 16px;
-        color: $color-grey-medium;
+        font-size: 14px;
+        color: $color-gold;
         text-transform: uppercase;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.3em;
+        font-weight: 500;
     }
 }
 
 .department {
-    margin-bottom: 100px;
+    margin-bottom: 140px;
 
     h2 {
         font-family: $font-family-serif;
-        font-size: 36px;
-        margin-bottom: 40px;
+        font-size: 32px;
+        margin-bottom: 60px;
         text-align: center;
-        color: $color-black;
+        color: $color-text-primary;
+        font-weight: 300;
         position: relative;
-        padding-bottom: 20px;
-
-        &::after {
+        
+        &::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
-            height: 1px;
-            background: $color-gold;
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, $color-gold);
         }
     }
 }
@@ -53,76 +61,91 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 80px;
 
     @media (min-width: $breakpoint-tablet) {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
     }
 }
 
 .card {
-    background: $color-white;
-    transition: all 0.4s ease;
-    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
     .imageWrapper {
         position: relative;
         width: 100%;
-        height: 400px; // Tall portrait
-        overflow: hidden;
+        aspect-ratio: 4/5;
+        overflow: visible;
+        margin-bottom: 40px;
+        background: radial-gradient(circle at center, rgba($color-gold, 0.1) 0%, transparent 70%);
+        border-radius: 200px 200px 0 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
 
         img {
-            object-fit: cover;
-            transition: transform 0.6s ease;
+            object-fit: contain !important;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
         }
 
-        &::after {
+        &::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0); // Transparent initially
-            transition: background 0.4s;
+            inset: 0;
+            background: rgba($color-gold, 0.03);
+            border-radius: 200px 200px 20px 20px;
+            z-index: -1;
+            border: 1px solid rgba($color-gold, 0.1);
         }
     }
 
     .info {
-        padding: 30px 20px 20px 0; // Left align style
-        text-align: left;
+        max-width: 80%;
 
         h3 {
             font-family: $font-family-serif;
-            font-size: 24px;
-            margin-bottom: 5px;
-            color: $color-black;
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: $color-text-primary;
+            font-weight: 400;
         }
 
         h4 {
             font-family: $font-family-sans;
-            font-size: 12px;
+            font-size: 11px;
             color: $color-gold;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 0;
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .bio {
+            font-family: $font-family-sans;
+            font-size: 15px;
+            line-height: 1.6;
+            color: $color-text-secondary;
+            font-weight: 300;
+            opacity: 0.8;
         }
     }
 
     &:hover {
-        .imageWrapper {
-            img {
-                transform: scale(1.05);
-            }
+        transform: translateY(-10px);
 
-            &::after {
-                background: rgba(0, 0, 0, 0.1);
-            }
+        .imageWrapper img {
+            transform: scale(1.08) translateY(-10px);
         }
 
-        .info h3 {
-            color: $color-gold; // Highlight name on hover
-            transition: color 0.3s;
+        h3 {
+            color: $color-gold;
         }
     }
 }
@@ -131,57 +154,97 @@
 .school {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-top: 80px;
-    padding: 60px 0;
-    background: rgba(255, 255, 255, 0.03); // Subtle grey tint
-    border-radius: 8px;
+    gap: 60px;
+    margin-top: 100px;
+    padding: 100px 60px;
+    background: rgba($color-gold, 0.02);
+    border: 1px solid rgba($color-gold, 0.05);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: 'EST. 1884';
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        font-family: $font-family-sans;
+        font-size: 10px;
+        letter-spacing: 0.4em;
+        color: rgba($color-gold, 0.3);
+        writing-mode: vertical-rl;
+    }
 
     @media (min-width: $breakpoint-tablet) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1.2fr;
         align-items: center;
     }
 }
 
 .schoolImageWrapper {
     position: relative;
-    height: 350px;
+    height: 500px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.4);
 
-    @media (min-width: $breakpoint-tablet) {
-        height: 400px;
+    img {
+        transition: transform 1.2s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
     }
 }
 
 .schoolContent {
-    padding: 40px;
-
     h2 {
         font-family: $font-family-serif;
-        font-size: 36px;
-        margin-bottom: 24px;
-        color: var(--color-text-accent);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
+        font-size: 42px;
+        margin-bottom: 32px;
+        color: $color-text-primary;
+        font-weight: 300;
+        line-height: 1.2;
     }
 
     p {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.8;
-        margin-bottom: 16px;
-        color: var(--color-text-secondary);
+        margin-bottom: 24px;
+        color: $color-text-secondary;
+        font-weight: 300;
     }
 
     ul {
-        list-style: disc;
-        padding-left: 20px;
-        margin-bottom: 16px;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 32px;
 
         li {
             font-size: 15px;
             line-height: 1.8;
-            color: var(--color-text-secondary);
+            color: $color-text-secondary;
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+
+            &::before {
+                content: '→';
+                position: absolute;
+                left: 0;
+                color: $color-gold;
+            }
         }
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

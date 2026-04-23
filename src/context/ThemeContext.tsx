@@ -18,8 +18,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         // Check local storage or system preference
         const savedTheme = localStorage.getItem('theme') as Theme;
         if (savedTheme) {
-            setTheme(savedTheme);
-            document.documentElement.setAttribute('data-theme', savedTheme);
+            // Using requestAnimationFrame to avoid synchronous setState warning and cascading renders
+            requestAnimationFrame(() => {
+                setTheme(savedTheme);
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            });
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
         }

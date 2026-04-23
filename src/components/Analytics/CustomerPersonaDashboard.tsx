@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-    PieChart, Pie, Cell, Sector
+    PieChart, Pie, Cell
 } from 'recharts';
 import {
     Users, DollarSign, TrendingUp, Activity,
-    Calendar, Download, ChevronDown, Award,
+    Calendar, Download, ChevronDown,
     Briefcase, MapPin, Zap, Target
 } from 'lucide-react';
 import styles from './CustomerPersonaDashboard.module.scss';
@@ -169,7 +169,7 @@ const Card = ({ title, children, className = '' }: { title?: string, children: R
     </div>
 );
 
-const KPICard = ({ title, value, icon: Icon, change }: { title: string, value: string, icon: any, change?: string }) => (
+const KPICard = ({ title, value, icon: Icon, change }: { title: string, value: string, icon: React.ElementType, change?: string }) => (
     <div className={styles.kpiCard}>
         <div className={styles.kpiHeader}>
             <span className={styles.kpiTitle}>{title}</span>
@@ -180,7 +180,13 @@ const KPICard = ({ title, value, icon: Icon, change }: { title: string, value: s
     </div>
 );
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+interface TooltipProps {
+    active?: boolean;
+    payload?: Array<{ value: number }>;
+    label?: string;
+}
+
+const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
     if (active && payload && payload.length) {
         return (
             <div className={styles.chartTooltip}>

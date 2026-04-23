@@ -64,19 +64,18 @@ function ShaderPlane({
 }) {
     const mesh = useRef<THREE.Mesh>(null)
 
-    const uniforms = useMemo(
-        () => ({
-            time: { value: 0 },
-            intensity: { value: 1.0 },
-            color1: { value: new THREE.Color(color1) },
-            color2: { value: new THREE.Color(color2) },
-        }),
-        [color1, color2],
-    )
+    const uniforms = useMemo(() => ({
+        time: { value: 0 },
+        intensity: { value: 1.0 },
+        color1: { value: new THREE.Color(color1) },
+        color2: { value: new THREE.Color(color2) },
+    }), [color1, color2]);
 
     useFrame((state) => {
         if (mesh.current) {
+            // eslint-disable-next-line react-hooks/immutability
             uniforms.time.value = state.clock.elapsedTime
+            // eslint-disable-next-line react-hooks/immutability
             uniforms.intensity.value = 1.0 + Math.sin(state.clock.elapsedTime * 2) * 0.3
         }
     })
@@ -95,29 +94,7 @@ function ShaderPlane({
     )
 }
 
-function EnergyRing({
-    radius = 1,
-    position = [0, 0, 0],
-}: {
-    radius?: number
-    position?: [number, number, number]
-}) {
-    const mesh = useRef<THREE.Mesh>(null)
 
-    useFrame((state) => {
-        if (mesh.current) {
-            mesh.current.rotation.z = state.clock.elapsedTime;
-            (mesh.current.material as THREE.MeshBasicMaterial).opacity = 0.5 + Math.sin(state.clock.elapsedTime * 3) * 0.3
-        }
-    })
-
-    return (
-        <mesh ref={mesh} position={position}>
-            <ringGeometry args={[radius * 0.8, radius, 32]} />
-            <meshBasicMaterial color="#ff5722" transparent opacity={0.6} side={THREE.DoubleSide} />
-        </mesh>
-    )
-}
 
 const ShaderBackground = () => {
     const { theme } = useTheme();

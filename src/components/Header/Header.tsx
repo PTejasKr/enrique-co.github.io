@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 
 import { ThemeToggle } from '../ui/theme-toggle';
 import LoginModal from '../Auth/LoginModal';
-import { MapPin, User, Search } from 'lucide-react';
+import { MapPin, User } from 'lucide-react';
 
 
 const Header = () => {

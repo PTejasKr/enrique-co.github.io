@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import styles from './detail.module.scss';
 import ProductCard from '@/components/Product/ProductCard';
