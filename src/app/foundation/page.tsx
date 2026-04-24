@@ -60,8 +60,8 @@ const Foundation = () => {
             <section className={styles.initiative}>
                 <div className={styles.imageWrapper}>
                     <Image
-                        src="https://images.unsplash.com/photo-1596525737118-8f85f3922339?q=80&w=2600&auto=format&fit=crop"
-                        alt="Watchmaking School"
+                        src="/images/about/school.jpg"
+                        alt="The Enrique School of Horology"
                         fill
                     />
                 </div>
